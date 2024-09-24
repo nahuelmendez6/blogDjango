@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block content %}
 
-    {% block content %}
-    <main class="main">
+     <main class="main">
 
         <div class="page-content mb-50">
             <div class="container">
@@ -12,13 +12,13 @@
                             <div class="totall-product">
                                 <h2>
                                     <img class="w-36px mr-10" src="{% static 'assets/imgs/theme/icons/category-1.svg' %}" alt="" />
-                                    Categoria {{ category }}
+                                    Búsqueda por {{ keyword }}
                                 </h2>
                             </div>
                         </div>
                         <div class="loop-grid loop-list pr-30 mb-50">
 
-                            {%  for post in posts  %}
+                            {%  for post in blogs  %}
                             <article class="wow fadeIn animated hover-up mb-30 animated">
                                 <div class="post-thumb" style="background-image: url({{ post.featured_image.url }})"></div>
                                 <div class="entry-content-2 pl-50">
@@ -52,5 +52,5 @@
             </div>
         </div>
     </main>
-    {% endblock %}
 
+{% endblock %}

@@ -44,7 +44,7 @@
                           <div class="post-thumb" style="background-image: url({{ post.featured_image.url }})"></div>
                           <div class="entry-content-2 pl-50">
                             <h3 class="post-title mb-20">
-                              <a href="blog-post-right.html">{{ post.title }}</a>
+                              <a href="{% url 'blogs' post.slug %}">{{ post.title }}</a>
                             </h3>
                             <p class="post-exerpt mb-40">{{ post.short_description }}</p>
                             <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
@@ -65,14 +65,8 @@
                 </div>
                 <div class="col-lg-3 primary-sidebar sticky-sidebar">
                   <div class="widget-area">
-                    <div class="sidebar-widget-2 widget_search mb-50">
-                      <div class="search-form">
-                        <form action="#">
-                          <input type="text" placeholder="Buscar..." />
-                          <button type="submit"><i class="fi-rs-search"></i></button>
-                        </form>
-                      </div>
-                    </div>
+
+                    {% include 'includes/blog_search.html' %}
 
                     {% include 'includes/category_list.html' %}
 
